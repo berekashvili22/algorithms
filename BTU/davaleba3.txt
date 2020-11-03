@@ -1,0 +1,115 @@
+# 1
+text = ' Write an algorithm in pseudocode to count the nber of capital letters ina file of text. How many comparisons does it do? What is the fewest nber of increments it might do? What is the largest nber? '
+upper = 0
+comp = 0
+for letter in text:
+    comp += 1
+    if letter.isupper():
+        upper +=1
+
+# print(upper, comp)
+# What is the fewest nber of increments it might do?  - 0 (roca capital letter ar gvakvs)
+#What is the largest nber?  (roca kvela capitral letteria)
+text = text.upper()
+upper = 0
+comp = 0
+for letter in text:
+    comp += 1
+    if letter.isupper():
+        upper +=1
+# print(upper, comp)
+
+#2
+
+nberSet = {5, 7, 3, 12, 55, 12}
+SetSum = 0
+SetLen = 0
+for i in nberSet:
+    SetLen += 1
+    SetSum += i
+
+averge = SetSum/SetLen
+
+# print(SetLen, SetSum, averge)
+
+# What type of operations does your algorithm 
+# minicheba , mimateba , cikli, gakofa 
+# do? How many of each of these operations does your algorithm do? 
+# minicheba - 3 + (SetLen * 2)
+# mimateba - SetLen * 2
+#cikli - SetLen
+#gakofa - 1
+
+#3
+
+def isdistinc(a,b,c):
+    if a>b:                      
+        if b>c:
+            print('all distinct')
+        else:
+            if c>a:
+                print('all distinc')
+            else:
+                if c>b:
+                    if a>c:
+                        print('all distinc')
+                    else:
+                        print('not distinc')
+                else:
+                    print('not distinct')
+    else:  
+        if a>c:
+            if b>a:
+                print('all distinc')
+            else:
+                print('not distinc')
+        else:
+            if b>c:     
+                if c>a:
+                    print('all distinc')
+                else:
+                    print('not distinc')
+            else:
+                if b>a:
+                    if c>b:
+                        print('all distinc')
+                    else:
+                        print('not distinc')
+                else:
+                    print('not distinc')
+
+          
+
+# print(isdistinc(1, 1, 7))
+#best 2 
+# worst 5
+# averge 3.5
+
+# 4
+
+
+def findmax(n1, n2, n3):
+    if (n1 > n2) and (n1 > n3):
+        largest = n1
+    elif (n2 > n1) and (n2 > n3):
+        largest = n2
+    else:
+        largest = n3
+    return largest
+
+# print(findmax(1, 2, 3))
+
+
+# kvelaze meti shedareba roca ricxvebi dalagebulia zrdadobit
+# kvelaze naklebi shedareba roca ricxvebi dalagebulia klebadobit
+
+# 5
+
+def secondmax(list):
+    list = set(list)
+    list.remove(max(list))
+    print(max(list))
+
+secondmax((10, 20 ,30 , 525,  4255, 423424 , 4244))
+
+# shedareba worst case set(list).length

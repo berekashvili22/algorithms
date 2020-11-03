@@ -1,0 +1,139 @@
+# 1.1    mxolod dadebit ricxvebze
+# def jeradi(n, n1, n2):
+#     for i in range(n+1, n1):
+#         if n2 % i == 0:
+#             print(i)
+
+# jeradi(2, 8, 240)
+            
+
+# # 1.2
+# # systems : dec, bin, oct, hex
+def NSconverter(n, frm, to):
+    value = {'dec': 1,'bin': 2, 'oct': 8, 'hex': 16}
+    hexN_value = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+    hexW_value = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+    if frm == 'dec':
+        result = ('') 
+        while n >= 1:
+            if to == 'hex':
+                d = str(n%(value[to]))   # am shemtxvevashi d-> n-is nashti 16-ze gakofisas
+                if int(d) > 9 and int(d) < 16:
+                    result += hexN_value[int(d)]
+                else:
+                    result += d
+                n //=value[to]
+            else:
+                d = str(n%(value[to]))
+                result += d
+                n //=value[to]
+        return result[::-1]   
+    elif to == 'dec':
+        n = str(n)
+        result = 0
+        indexL = 0 #index of first item in given number
+        indexM = len(n) - 1
+        for i in n:
+            if frm == 'hex':
+                listItem = n[indexL]
+                listItems = int(hexW_value.get(listItem, listItem)) #find value in hexWdict
+                hex = value[frm] #value of HexWord in HexN
+                itemValue = listItems * (hex**indexM)
+                result += itemValue
+                indexM -= 1
+                indexL += 1
+            else:
+                listItem = int(n[indexL]) #get first item from frm
+                if listItem > 0:
+                    result += listItem * (value[frm]**indexM)
+                else:
+                    pass
+                indexM -= 1
+                indexL += 1
+        return result
+#                 ricxvi saidan   sad        archevani : dec, bin, oct, hex
+print(NSconverter('16C', 'hex', 'dec'))
+print(NSconverter(101100110, 'bin', 'dec'))
+print(NSconverter(2040, 'dec', 'hex'))
+print(NSconverter(2040, 'oct', 'dec'))
+
+# 1.3
+
+# a = 292
+# b = 332
+# c = 2555
+# d = 205
+# e = 191
+
+# def max(a,b,c,d,e):
+#     L=a
+#     if b>L:
+#         L=b
+#     if c>L:
+#         L=c
+#     if d>L:
+#         L=d
+#     if e>L:
+#         L=e
+#     return L
+    
+
+# def max1(a,b,c,d,e):
+#     if a>b:
+#         if a>c:
+#             if a>d:
+#                 if a>e:
+#                     return a
+#                 else:
+#                     return e
+#             else:
+#                 if d>e:
+#                     return d
+#                 else:
+#                     return e
+#         else:
+#             if c>d:
+#                 if c>e:
+#                     return c
+#                 else:
+#                     return e
+#             else:
+#                 if d>e:
+#                     return d
+#                 else:
+#                     return e
+#     else:
+#         if b>c:
+#             if b>d:
+#                 if b>e:
+#                     return b
+#                 else:
+#                     return e
+#             else:
+#                 if d>e:
+#                     return d
+#                 else:
+#                     return e
+#         else:
+#             if c>d:
+#                 if c>e:
+#                     return c
+#                 else:
+#                     return e   
+#             else:
+#                 if d>e:
+#                     return d
+#                 else:
+#                     return e
+
+# print(max(a,b,c,d,e))
+# print(max1(a,b,c,d,e))
+ 
+
+
+
+
+ 
+  
+
+
